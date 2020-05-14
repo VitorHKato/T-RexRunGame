@@ -3,7 +3,8 @@
 int main()
 {
     Event event;
-    Draw* window = new Draw(&event);
+    Dino* player = new Dino();
+    Draw* window = new Draw(&event, player);
 
     return 0;
 }
