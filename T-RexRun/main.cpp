@@ -4,7 +4,8 @@ int main()
 {
     Event event;
     Dino* player = new Dino();
-    Draw* window = new Draw(&event, player);
+    Engine* engine = new Engine(player);
+    Draw* window = new Draw(&event, engine);
 
     return 0;
 }

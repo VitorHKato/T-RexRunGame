@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "Dino.h"
+#include "Engine.h"
 #include "SFML/Graphics.hpp"
 using namespace sf;
 
@@ -9,9 +9,9 @@ private:
 	Event* event;
 	RenderWindow* window;
 
-	Dino* player;
+	Engine* engine;
 public:
-	Draw(Event* event, Dino* player);
+	Draw(Event* event, Engine* engine);
 	~Draw();
 
 	void loop(Event* event);

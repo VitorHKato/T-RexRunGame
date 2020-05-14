@@ -1,10 +1,10 @@
 #include "Draw.h"
 
-Draw::Draw(Event* event, Dino* player)
+Draw::Draw(Event* event, Engine* engine)
 {
 	this->event = event;
 	window = new RenderWindow(VideoMode(200, 200), "SFML works!");
-	this->player = player;
+	this->engine = engine;
 
 	loop(event);
 }
@@ -24,7 +24,7 @@ void Draw::loop(Event* event)
 		}
 
 		window->clear();
-		window->draw(player->getHitBox());
+		window->draw(engine->getPlayer()->getHitBox());
 		window->display();
 	}
 }

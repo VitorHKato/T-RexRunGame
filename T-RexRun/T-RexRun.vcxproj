@@ -146,11 +146,13 @@
   <ItemGroup>
     <ClCompile Include="Dino.cpp" />
     <ClCompile Include="Draw.cpp" />
+    <ClCompile Include="Engine.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dino.h" />
     <ClInclude Include="Draw.h" />
+    <ClInclude Include="Engine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
