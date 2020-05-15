@@ -12,4 +12,9 @@ Dino::~Dino()
 RectangleShape Dino::getHitBox()
 {
 	return hitbox;
+
+}
+void Dino::setPosition(float x, float y)
+{
+	hitbox.move(Vector2f(x, y));
 }

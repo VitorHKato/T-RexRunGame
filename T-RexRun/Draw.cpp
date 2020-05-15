@@ -23,6 +23,8 @@ void Draw::loop(Event* event)
 				window->close();
 		}
 
+		engine->movePlayer();
+
 		window->clear();
 		window->draw(engine->getPlayer()->getHitBox());
 		window->display();

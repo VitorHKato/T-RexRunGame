@@ -10,4 +10,5 @@ public:
 	~Dino();
 
 	RectangleShape getHitBox();
+	void setPosition(float x, float y);
 };

@@ -11,4 +11,6 @@ public:
 	~Engine();
 
 	Dino* getPlayer();
+
+	void movePlayer();
 };
