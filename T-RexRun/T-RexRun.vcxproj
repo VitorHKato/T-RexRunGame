@@ -144,12 +144,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BackgroundBird.cpp" />
     <ClCompile Include="Dino.cpp" />
     <ClCompile Include="Draw.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BackgroundBird.h" />
     <ClInclude Include="Dino.h" />
     <ClInclude Include="Draw.h" />
     <ClInclude Include="Engine.h" />

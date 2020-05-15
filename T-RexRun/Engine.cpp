@@ -3,6 +3,7 @@
 Engine::Engine(Dino* player)
 {
 	this->player = player;
+	bird = new BackgroundBird();
 }
 Engine::~Engine()
 {
@@ -11,6 +12,10 @@ Engine::~Engine()
 Dino* Engine::getPlayer()
 {
 	return player;
+}
+BackgroundBird* Engine::getBird()
+{
+	return bird;
 }
 void Engine::movePlayer()
 {
