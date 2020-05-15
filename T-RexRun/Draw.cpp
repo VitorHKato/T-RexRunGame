@@ -1,9 +1,16 @@
 #include "Draw.h"
+#include <iostream>
+
+const int Draw::HEIGHT = 400;
+const int Draw::WIDTH = 1200;
 
 Draw::Draw(Event* event, Engine* engine)
 {
 	this->event = event;
-	window = new RenderWindow(VideoMode(200, 200), "SFML works!");
+	desktop = VideoMode::getDesktopMode();
+	window = new RenderWindow(VideoMode(WIDTH, HEIGHT, desktop.bitsPerPixel), "T-Rex Run!");
+	view.reset(FloatRect(0.0, 0.0, WIDTH, HEIGHT));
+	view.setSize(WIDTH, HEIGHT);
 	this->engine = engine;
 
 	loop(event);
@@ -25,6 +32,12 @@ void Draw::loop(Event* event)
 
 		engine->movePlayer();
 
+		std::cout << engine->getPlayer()->getPosition().x << std::endl;
+
+		if(engine->getPlayer()->getPosition().x > WIDTH/2)
+			view.setCenter(engine->getPlayer()->getPosition());
+
+		window->setView(view);
 		window->clear();
 		window->draw(engine->getPlayer()->getHitBox());
 		window->display();

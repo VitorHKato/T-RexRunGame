@@ -1,6 +1,4 @@
 #include "Engine.h"
-#include <iostream>
-using namespace std;
 
 Engine::Engine(Dino* player)
 {
@@ -18,19 +16,19 @@ void Engine::movePlayer()
 {
 	if (Keyboard::isKeyPressed(Keyboard::D))
 	{
-		player->setPosition(0.1, 0);
+		player->setPosition(2, 0);
 	}
 	else if (Keyboard::isKeyPressed(Keyboard::A))
 	{
-		player->setPosition(-0.1, 0);
+		player->setPosition(-2, 0);
 	}
 	else if (Keyboard::isKeyPressed(Keyboard::W))
 	{
-		player->setPosition(0, -0.1);
+		player->setPosition(0, -2);
 	}
 	else if (Keyboard::isKeyPressed(Keyboard::S))
 	{
-		player->setPosition(0, 0.1);
+		player->setPosition(0, 2);
 	}
 
 }

@@ -1,4 +1,5 @@
 #include "SFML/Graphics.hpp"
+#pragma once
 using namespace sf;
 
 class Dino
@@ -11,4 +12,5 @@ public:
 
 	RectangleShape getHitBox();
 	void setPosition(float x, float y);
+	Vector2f getPosition();
 };

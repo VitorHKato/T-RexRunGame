@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "Engine.h"
 #include "SFML/Graphics.hpp"
+#pragma once
 using namespace sf;
 
 class Draw
@@ -8,9 +9,14 @@ class Draw
 private:
 	Event* event;
 	RenderWindow* window;
-
+	VideoMode desktop;
+	View view;
 	Engine* engine;
+
 public:
+	static const int HEIGHT;
+	static const int WIDTH;
+
 	Draw(Event* event, Engine* engine);
 	~Draw();
 

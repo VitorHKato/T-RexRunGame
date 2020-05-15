@@ -1,5 +1,6 @@
 #include "SFML/Graphics.hpp"
 #include "Dino.h"
+#pragma once
 using namespace sf;
 
 class Engine
