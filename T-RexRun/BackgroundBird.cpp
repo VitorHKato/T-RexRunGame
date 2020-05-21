@@ -4,7 +4,7 @@ BackgroundBird::BackgroundBird()
 {
 	shape.setFillColor(Color::Magenta);
 	shape.setRadius(10);
-	shape.setPosition(500, 300);
+	shape.setPosition(1500, 250);
 }
 BackgroundBird::~BackgroundBird()
 {

@@ -5,7 +5,7 @@ Dino::Dino()
 {
 	hitbox.setSize(Vector2f(50, 50));
 	hitbox.setFillColor(Color::Green);
-	hitbox.setPosition(Vector2f(0, Draw::HEIGHT));
+	hitbox.setPosition(Vector2f(10, Draw::HEIGHT));
 }
 Dino::~Dino()
 {

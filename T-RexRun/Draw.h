@@ -21,4 +21,6 @@ public:
 	~Draw();
 
 	void loop(Event* event);
+	void CameraControl();
+	void ResetBirdPosition();
 };
