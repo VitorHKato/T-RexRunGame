@@ -1,5 +1,6 @@
 #include "Dino.h"
 #include "Draw.h"
+using namespace std;
 
 Dino::Dino()
 {
@@ -8,6 +9,8 @@ Dino::Dino()
 	hitbox.setPosition(Vector2f(10, Draw::HEIGHT));
 	jump = false;
 	isJumping = false;
+	loadSprite();
+	sprite.setPosition(Vector2f(10, Draw::HEIGHT));
 }
 Dino::~Dino()
 {
@@ -16,11 +19,19 @@ Dino::~Dino()
 RectangleShape Dino::getHitBox()
 {
 	return hitbox;
-
+}
+void Dino::loadSprite()
+{
+	if (!texture.loadFromFile("Images/Dino.jpg"))
+	{
+		cout << "Error loading the file." << endl;
+	}
+	sprite.setTexture(texture);
 }
 void Dino::setPosition(float x, float y)
 {
 	hitbox.move(Vector2f(x, y));
+	sprite.move(Vector2f(x, y));
 }
 Vector2f Dino::getPosition()
 {
@@ -41,4 +52,8 @@ void Dino::setIsJumping(bool i)
 bool Dino::getIsJumping()
 {
 	return isJumping;
+}
+Sprite Dino::getSprite()
+{
+	return sprite;
 }

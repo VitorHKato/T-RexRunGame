@@ -37,19 +37,20 @@ void Draw::loop(Event* event)
 		ResetBirdPosition();
 
 		window->setView(view);
-		window->clear();
-		window->draw(engine->getBird()->getShape());
-		window->draw(engine->getPlayer()->getHitBox());
+		window->clear(Color::White);
+		window->draw(engine->getBird()->getSprite());
+		window->draw(engine->getPlayer()->getSprite());
 		window->display();
 	}
 }
 void Draw::CameraControl()
 {
 	if (engine->getPlayer()->getPosition().x > WIDTH / 3)
-		view.setCenter(Vector2f(engine->getPlayer()->getPosition().x + WIDTH / 3 - 200, engine->getPlayer()->getPosition().y));
+		view.setCenter(Vector2f(engine->getPlayer()->getPosition().x + WIDTH / 3 - 200, HEIGHT));
 }
 void Draw::ResetBirdPosition()
 {
+	///Pássaro sempre reaparecerá um pouco à frente do jogador
 	if ((int)engine->getPlayer()->getPosition().x % WIDTH * 2 == 0)
 		engine->getBird()->setPosition(engine->getPlayer()->getPosition().x + WIDTH / 2 + 200, 250);
 }
