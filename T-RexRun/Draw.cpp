@@ -28,6 +28,8 @@ void Draw::loop(Event* event)
 		{
 			if (event->type == event->Closed)
 				window->close();
+
+			engine->playerJump();
 		}
 
 		engine->movePlayer();
@@ -43,13 +45,11 @@ void Draw::loop(Event* event)
 }
 void Draw::CameraControl()
 {
-	std::cout << engine->getPlayer()->getPosition().x << std::endl;
-
 	if (engine->getPlayer()->getPosition().x > WIDTH / 3)
 		view.setCenter(Vector2f(engine->getPlayer()->getPosition().x + WIDTH / 3 - 200, engine->getPlayer()->getPosition().y));
 }
 void Draw::ResetBirdPosition()
 {
 	if ((int)engine->getPlayer()->getPosition().x % WIDTH * 2 == 0)
-		engine->getBird()->setPosition(engine->getPlayer()->getPosition().x + WIDTH - 215, 250);
+		engine->getBird()->setPosition(engine->getPlayer()->getPosition().x + WIDTH / 2 + 200, 250);
 }

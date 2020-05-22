@@ -6,6 +6,8 @@ class Dino
 {
 private:
 	RectangleShape hitbox;
+	bool jump;
+	bool isJumping;
 public:
 	Dino();
 	~Dino();
@@ -13,4 +15,9 @@ public:
 	RectangleShape getHitBox();
 	void setPosition(float x, float y);
 	Vector2f getPosition();
+	void setJump(bool p);
+	bool getJump();
+	void setIsJumping(bool i);
+	bool getIsJumping();
+
 };
