@@ -42,7 +42,7 @@ void Draw::loop(Event* event)
 		window->clear(Color::White);
 		window->draw(engine->getBird()->getSprite());
 		window->draw(engine->getPlayer()->getSprite());
-		window->draw(engine->getObstacle()->getHitbox());
+		window->draw(engine->getObstacle()->getSprite());
 		window->display();
 	}
 }
