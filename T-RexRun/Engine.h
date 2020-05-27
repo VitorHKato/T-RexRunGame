@@ -14,7 +14,7 @@ private:
 	Obstacle* obstacle;
 	static const float gravity;
 	float speed;
-	int timer;
+	int timer;				//Contador para incrementar a aceleração
 public:
 	Engine(Dino* player, Event* event);
 	~Engine();

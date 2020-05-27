@@ -5,7 +5,7 @@ Obstacle::Obstacle()
 {
 	hitbox.setSize(Vector2f(50, 50));
 	hitbox.setFillColor(Color::Magenta);
-	hitbox.setPosition(Vector2f(200, Draw::HEIGHT));
+	hitbox.setPosition(Vector2f(800, Draw::HEIGHT));
 }
 Obstacle::~Obstacle()
 {

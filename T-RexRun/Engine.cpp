@@ -1,6 +1,6 @@
 #include "Engine.h"
 
-const float Engine::gravity = 0.2;
+const float Engine::gravity = 0.15;
 
 Engine::Engine(Dino* player, Event* event)
 {
@@ -33,7 +33,7 @@ void Engine::movePlayer()
 
 	if (timer % 1000 == 0)
 	{
-		speed += 0.01;
+		speed += 0.008;
 		timer = 1;
 	}
 
@@ -45,15 +45,22 @@ void Engine::movePlayer()
 	if (player->getJump() && player->getIsJumping())
 	{
 		player->setJump(false);
-		player->setPosition(0, -100);
+		player->setPosition(0, -150);
 	}
+
+	if (player->getPosition().y >= 400)
+		player->setIsJumping(false);
 
 }
 void Engine::playerJump()
 {
-	if (event->type == Event::KeyPressed && event->key.code == Keyboard::Space)
+	if (!player->getIsJumping())
 	{
-		player->setJump(true);
-		player->setIsJumping(true);
+		if (event->type == Event::KeyPressed && event->key.code == Keyboard::Space ||
+			event->type == Event::KeyPressed && event->key.code == Keyboard::W)
+		{
+			player->setJump(true);
+			player->setIsJumping(true);
+		}
 	}
 }

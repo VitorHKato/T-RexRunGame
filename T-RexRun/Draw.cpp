@@ -53,16 +53,16 @@ void Draw::CameraControl()
 }
 void Draw::ResetScenario()
 {
-	if ((int)engine->getPlayer()->getPosition().x % WIDTH * 2 == 0)
-	{
-		random_device rd;   // non-deterministic generator
-		mt19937 gen(rd());  // to seed mersenne twister.
-		uniform_int_distribution<> dist(0, 1000); // distribute results between 0 and 1000 inclusive.
+	random_device rd;   // non-deterministic generator
+	mt19937 gen(rd());  // to seed mersenne twister.
+	uniform_int_distribution<> dist(0, 1000); // distribute results between 0 and 1000 inclusive.
 
-		///Pássaro sempre reaparecerá um pouco à frente do jogador
+	///Pássaro sempre reaparecerá um pouco à frente do jogador
+	if(engine->getBird()->getPosition().x < engine->getPlayer()->getPosition().x - WIDTH / 2)
 		engine->getBird()->setPosition(engine->getPlayer()->getPosition().x + WIDTH / 2 + 200, 250);
-		///Obstáculo reaparecerá à frente em uma posição aleatória
+
+	///Obstáculo reaparecerá à frente em uma posição aleatória
+	if(engine->getObstacle()->getPosition().x < engine->getPlayer()->getPosition().x - WIDTH / 2)
 		engine->getObstacle()->setPosition(engine->getPlayer()->getPosition().x + WIDTH / 2 + dist(gen), HEIGHT);
-	}
 
 }
