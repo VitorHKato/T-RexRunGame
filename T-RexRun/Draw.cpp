@@ -1,5 +1,7 @@
 #include "Draw.h"
 #include <iostream>
+#include <random>
+using namespace std;
 
 const int Draw::HEIGHT = 400;
 const int Draw::WIDTH = 1200;
@@ -34,12 +36,13 @@ void Draw::loop(Event* event)
 
 		engine->movePlayer();
 		CameraControl();
-		ResetBirdPosition();
+		ResetScenario();
 
 		window->setView(view);
 		window->clear(Color::White);
 		window->draw(engine->getBird()->getSprite());
 		window->draw(engine->getPlayer()->getSprite());
+		window->draw(engine->getObstacle()->getHitbox());
 		window->display();
 	}
 }
@@ -48,9 +51,18 @@ void Draw::CameraControl()
 	if (engine->getPlayer()->getPosition().x > WIDTH / 3)
 		view.setCenter(Vector2f(engine->getPlayer()->getPosition().x + WIDTH / 3 - 200, HEIGHT));
 }
-void Draw::ResetBirdPosition()
+void Draw::ResetScenario()
 {
-	///Pássaro sempre reaparecerá um pouco à frente do jogador
 	if ((int)engine->getPlayer()->getPosition().x % WIDTH * 2 == 0)
+	{
+		random_device rd;   // non-deterministic generator
+		mt19937 gen(rd());  // to seed mersenne twister.
+		uniform_int_distribution<> dist(0, 1000); // distribute results between 0 and 1000 inclusive.
+
+		///Pássaro sempre reaparecerá um pouco à frente do jogador
 		engine->getBird()->setPosition(engine->getPlayer()->getPosition().x + WIDTH / 2 + 200, 250);
+		///Obstáculo reaparecerá à frente em uma posição aleatória
+		engine->getObstacle()->setPosition(engine->getPlayer()->getPosition().x + WIDTH / 2 + dist(gen), HEIGHT);
+	}
+
 }

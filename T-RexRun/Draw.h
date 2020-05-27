@@ -22,5 +22,5 @@ public:
 
 	void loop(Event* event);
 	void CameraControl();
-	void ResetBirdPosition();
+	void ResetScenario();
 };
