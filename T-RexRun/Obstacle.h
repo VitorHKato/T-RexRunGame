@@ -1,21 +1,14 @@
-#include "SFML/Graphics.hpp"
-#include <iostream>
+#include "Entity.h"
 #pragma once
-using namespace sf;
 
-class Obstacle
+class Obstacle : public Entity
 {
-private:
+protected:
 	RectangleShape hitbox;
-	Texture texture;
-	Sprite sprite;
 public:
 	Obstacle();
 	~Obstacle();
 
 	RectangleShape getHitbox();
-	Vector2f getPosition();
 	void setPosition(float x, float y);
-	void loadSprite();
-	Sprite getSprite();
 };

@@ -42,7 +42,7 @@ void Draw::loop(Event* event)
 		window->clear(Color::White);
 		window->draw(engine->getBird()->getSprite());
 		window->draw(engine->getPlayer()->getSprite());
-		window->draw(engine->getObstacle()->getSprite());
+		window->draw(engine->getCactus()->getSprite());
 		window->display();
 	}
 }
@@ -62,7 +62,7 @@ void Draw::ResetScenario()
 		engine->getBird()->setPosition(engine->getPlayer()->getPosition().x + WIDTH / 2 + 200, 250);
 
 	///Obstáculo reaparecerá à frente em uma posição aleatória
-	if(engine->getObstacle()->getPosition().x < engine->getPlayer()->getPosition().x - WIDTH / 2)
-		engine->getObstacle()->setPosition(engine->getPlayer()->getPosition().x + WIDTH / 2 + dist(gen), HEIGHT);
+	if(engine->getCactus()->getPosition().x < engine->getPlayer()->getPosition().x - WIDTH / 2)
+		engine->getCactus()->setPosition(engine->getPlayer()->getPosition().x + WIDTH / 2 + dist(gen), HEIGHT);
 
 }

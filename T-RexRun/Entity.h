@@ -1,6 +1,8 @@
 #include "SFML/Graphics.hpp"
 #include <iostream>
+#pragma once
 using namespace sf;
+using namespace std;
 
 class Entity
 {
@@ -11,7 +13,7 @@ public:
 	Entity();
 	~Entity();
 
-	virtual void loadSprite() = 0;
+	virtual void loadSprite(const string arq);
 	virtual Vector2f getPosition();
 	virtual void setPosition(float x, float y) = 0;
 	virtual Sprite getSprite();

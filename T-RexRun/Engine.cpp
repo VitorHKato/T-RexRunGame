@@ -7,7 +7,7 @@ Engine::Engine(Dino* player, Event* event)
 	this->player = player;
 	this->event = event;
 	bird = new Bird();
-	obstacle = new Obstacle();
+	cactus = new Cactus();
 	timer = 1;
 	speed = 0.2;
 }
@@ -23,9 +23,9 @@ Bird* Engine::getBird()
 {
 	return bird;
 }
-Obstacle* Engine::getObstacle()
+Cactus* Engine::getCactus()
 {
-	return obstacle;
+	return cactus;
 }
 void Engine::movePlayer()
 {

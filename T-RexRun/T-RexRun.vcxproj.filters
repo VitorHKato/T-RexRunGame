@@ -22,21 +22,27 @@
     <Filter Include="Header Files\Backgrounds">
       <UniqueIdentifier>{f988a9ed-7b17-4ebe-8033-63f53c0e5b3a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Players">
+      <UniqueIdentifier>{22f36854-39cc-421b-bfb7-dc96e085c273}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Players">
+      <UniqueIdentifier>{f5166212-e44a-4788-a4e2-dc05ed0833ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Backgrounds">
+      <UniqueIdentifier>{8f9451b1-4f01-49e5-b8fb-312a43fad8cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Obstacles">
+      <UniqueIdentifier>{e84de113-ab22-4ee7-bc46-5e0dbbdf3e65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Obstacles">
+      <UniqueIdentifier>{1a00c059-da7a-463e-b4c9-be8a132bae33}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Dino.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Obstacle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Background.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Engine.cpp">
@@ -45,21 +51,27 @@
     <ClCompile Include="Draw.cpp">
       <Filter>Source Files\Functionalities</Filter>
     </ClCompile>
+    <ClCompile Include="Dino.cpp">
+      <Filter>Source Files\Players</Filter>
+    </ClCompile>
     <ClCompile Include="Bird.cpp">
+      <Filter>Source Files\Backgrounds</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstacle.cpp">
+      <Filter>Source Files\Obstacles</Filter>
+    </ClCompile>
+    <ClCompile Include="Cactus.cpp">
+      <Filter>Source Files\Obstacles</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>Source Files\Backgrounds</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Dino.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Obstacle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Entity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Background.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Draw.h">
@@ -70,6 +82,21 @@
     </ClInclude>
     <ClInclude Include="Bird.h">
       <Filter>Header Files\Backgrounds</Filter>
+    </ClInclude>
+    <ClInclude Include="Dino.h">
+      <Filter>Header Files\Players</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstacle.h">
+      <Filter>Header Files\Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="Cactus.h">
+      <Filter>Header Files\Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>Header Files\Backgrounds</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

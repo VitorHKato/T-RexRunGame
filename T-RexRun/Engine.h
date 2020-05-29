@@ -1,7 +1,7 @@
 #include "SFML/Graphics.hpp"
 #include "Dino.h"
 #include "Bird.h"
-#include "Obstacle.h"
+#include "Cactus.h"
 #pragma once
 using namespace sf;
 
@@ -11,7 +11,7 @@ private:
 	Dino* player;
 	Event* event;
 	Bird* bird;
-	Obstacle* obstacle;
+	Cactus* cactus;
 	static const float gravity;
 	float speed;
 	int timer;				//Contador para incrementar a aceleração
@@ -21,7 +21,7 @@ public:
 
 	Dino* getPlayer();
 	Bird* getBird();
-	Obstacle* getObstacle();
+	Cactus* getCactus();
 
 	void movePlayer();
 	void playerJump();

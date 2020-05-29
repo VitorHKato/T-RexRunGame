@@ -16,3 +16,11 @@ Sprite Entity::getSprite()
 {
 	return sprite;
 }
+void Entity::loadSprite(const string arq)
+{
+	if (!texture.loadFromFile(arq))
+	{
+		cout << "Error loading the file." << endl;
+	}
+	sprite.setTexture(texture);
+}

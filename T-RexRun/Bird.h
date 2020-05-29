@@ -1,4 +1,5 @@
 #include "Background.h"
+#pragma once
 
 class Bird : public Background
 {
@@ -8,5 +9,4 @@ public:
 	Bird();
 	~Bird();
 
-	void loadSprite();
 };

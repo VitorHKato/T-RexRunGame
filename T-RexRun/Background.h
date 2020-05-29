@@ -1,4 +1,5 @@
 #include "Entity.h"
+#pragma once
 
 class Background : public Entity
 {
