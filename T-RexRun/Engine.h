@@ -1,6 +1,6 @@
 #include "SFML/Graphics.hpp"
 #include "Dino.h"
-#include "BackgroundBird.h"
+#include "Bird.h"
 #include "Obstacle.h"
 #pragma once
 using namespace sf;
@@ -10,7 +10,7 @@ class Engine
 private:
 	Dino* player;
 	Event* event;
-	BackgroundBird* bird;
+	Bird* bird;
 	Obstacle* obstacle;
 	static const float gravity;
 	float speed;
@@ -20,7 +20,7 @@ public:
 	~Engine();
 
 	Dino* getPlayer();
-	BackgroundBird* getBird();
+	Bird* getBird();
 	Obstacle* getObstacle();
 
 	void movePlayer();

@@ -144,18 +144,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BackgroundBird.cpp" />
+    <ClCompile Include="Background.cpp" />
+    <ClCompile Include="Bird.cpp" />
     <ClCompile Include="Dino.cpp" />
     <ClCompile Include="Draw.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Obstacle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BackgroundBird.h" />
+    <ClInclude Include="Background.h" />
+    <ClInclude Include="Bird.h" />
     <ClInclude Include="Dino.h" />
     <ClInclude Include="Draw.h" />
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="Entity.h" />
     <ClInclude Include="Obstacle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
