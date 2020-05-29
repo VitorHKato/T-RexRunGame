@@ -40,9 +40,9 @@ void Draw::loop(Event* event)
 
 		window->setView(view);
 		window->clear(Color::White);
-		window->draw(engine->getBird()->getSprite());
+		window->draw(engine->getBackgroundElement()->getSprite());
 		window->draw(engine->getPlayer()->getSprite());
-		window->draw(engine->getCactus()->getSprite());
+		window->draw(engine->getObstacleElements()->getSprite());
 		window->display();
 	}
 }
@@ -58,11 +58,11 @@ void Draw::ResetScenario()
 	uniform_int_distribution<> dist(0, 1000); // distribute results between 0 and 1000 inclusive.
 
 	///Pássaro sempre reaparecerá um pouco à frente do jogador
-	if(engine->getBird()->getPosition().x < engine->getPlayer()->getPosition().x - WIDTH / 2)
-		engine->getBird()->setPosition(engine->getPlayer()->getPosition().x + WIDTH / 2 + 200, 250);
+	if(engine->getBackgroundElement()->getPosition().x < engine->getPlayer()->getPosition().x - WIDTH / 2)
+		engine->getBackgroundElement()->setPosition(engine->getPlayer()->getPosition().x + WIDTH / 2 + 200, 250);
 
 	///Obstáculo reaparecerá à frente em uma posição aleatória
-	if(engine->getCactus()->getPosition().x < engine->getPlayer()->getPosition().x - WIDTH / 2)
-		engine->getCactus()->setPosition(engine->getPlayer()->getPosition().x + WIDTH / 2 + dist(gen), HEIGHT);
+	if(engine->getObstacleElements()->getPosition().x < engine->getPlayer()->getPosition().x - WIDTH / 2)
+		engine->getObstacleElements()->setPosition(engine->getPlayer()->getPosition().x + WIDTH / 2 + dist(gen), HEIGHT);
 
 }

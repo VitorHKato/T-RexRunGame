@@ -6,10 +6,11 @@ Engine::Engine(Dino* player, Event* event)
 {
 	this->player = player;
 	this->event = event;
-	bird = new Bird();
-	cactus = new Cactus();
 	timer = 1;
 	speed = 0.2;
+
+	initializeBackgroundElements();
+	initializeObstacleElements();
 }
 Engine::~Engine()
 {
@@ -19,13 +20,24 @@ Dino* Engine::getPlayer()
 {
 	return player;
 }
-Bird* Engine::getBird()
+Background* Engine::getBackgroundElement()
 {
-	return bird;
+
+	for (i_backgroundElements = backgroundElements.begin(); 
+		i_backgroundElements != backgroundElements.end(); 
+		i_backgroundElements++)
+	{
+		return *i_backgroundElements;
+	}
 }
-Cactus* Engine::getCactus()
+Obstacle* Engine::getObstacleElements()
 {
-	return cactus;
+	for (i_obstacleElements = obstacleElements.begin();
+		i_obstacleElements != obstacleElements.end();
+		i_obstacleElements++)
+	{
+		return *i_obstacleElements;
+	}
 }
 void Engine::movePlayer()
 {
@@ -63,4 +75,14 @@ void Engine::playerJump()
 			player->setIsJumping(true);
 		}
 	}
+}
+void Engine::initializeBackgroundElements()
+{
+	bird = new Bird();
+	backgroundElements.push_back(bird);
+}
+void Engine::initializeObstacleElements()
+{
+	cactus = new Cactus();
+	obstacleElements.push_back(cactus);
 }
