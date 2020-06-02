@@ -14,3 +14,7 @@ Cactus::~Cactus()
 {
 
 }
+void Cactus::animation()
+{
+
+}

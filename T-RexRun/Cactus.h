@@ -8,4 +8,6 @@ private:
 public:
 	Cactus();
 	~Cactus();
+
+	void animation();
 };

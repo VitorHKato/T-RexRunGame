@@ -14,6 +14,7 @@ Draw::Draw(Event* event, Engine* engine)
 	view.setSize(WIDTH, HEIGHT);
 	view.setCenter(Vector2f(WIDTH / 2, HEIGHT));
 	this->engine = engine;
+	frame = 0;
 
 	loop(event);
 }
@@ -34,9 +35,15 @@ void Draw::loop(Event* event)
 			engine->playerJump();
 		}
 
+		frame++;
+
 		engine->movePlayer();
 		CameraControl();
 		ResetScenario();
+
+		if (frame >= 5000)
+			engine->getPlayer()->setFastMode(true);
+
 
 		window->setView(view);
 		window->clear(Color::White);

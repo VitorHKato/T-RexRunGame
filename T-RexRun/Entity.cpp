@@ -2,7 +2,9 @@
 
 Entity::Entity()
 {
-
+	frameAnimation = 0;
+	frameImage = 0;
+	numberOfImages = 0;
 }
 Entity::~Entity()
 {
@@ -14,6 +16,7 @@ Vector2f Entity::getPosition()
 }
 Sprite Entity::getSprite()
 {
+	animation();
 	return sprite;
 }
 void Entity::loadSprite(const string arq)

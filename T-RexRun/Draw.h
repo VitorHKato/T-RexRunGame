@@ -12,6 +12,7 @@ private:
 	VideoMode desktop;
 	View view;
 	Engine* engine;
+	int frame;
 
 public:
 	static const int HEIGHT;

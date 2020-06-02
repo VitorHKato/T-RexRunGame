@@ -9,4 +9,6 @@ public:
 	Bird();
 	~Bird();
 
+	void animation();
+
 };

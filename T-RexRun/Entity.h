@@ -9,6 +9,9 @@ class Entity
 protected:
 	Texture texture;
 	Sprite sprite;
+	int frameAnimation;		//frame counter to switch animation image
+	int frameImage;			//number of the actual image 
+	int numberOfImages;		//number of images to do the action
 public:
 	Entity();
 	~Entity();
@@ -17,4 +20,5 @@ public:
 	virtual Vector2f getPosition();
 	virtual void setPosition(float x, float y) = 0;
 	virtual Sprite getSprite();
+	virtual void animation() = 0;
 };

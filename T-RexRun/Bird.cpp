@@ -10,3 +10,7 @@ Bird::~Bird()
 {
 
 }
+void Bird::animation()
+{
+
+}
