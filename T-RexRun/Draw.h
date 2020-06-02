@@ -24,4 +24,6 @@ public:
 	void loop(Event* event);
 	void CameraControl();
 	void ResetScenario();
+	void playerSpeedMode();
+	void draws();
 };

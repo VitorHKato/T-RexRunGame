@@ -2,7 +2,9 @@
 
 Player::Player()
 {
-
+	jump = false;
+	isJumping = false;
+	isDead = false;
 }
 Player::~Player()
 {
@@ -14,8 +16,8 @@ RectangleShape Player::getHitBox()
 }
 void Player::setPosition(float x, float y)
 {
-	hitbox.move(Vector2f(x, y));
-	sprite.move(Vector2f(x, y));
+	hitbox.setPosition(Vector2f(x, y));
+	sprite.setPosition(Vector2f(x, y));
 }
 void Player::setJump(bool p)
 {
@@ -32,4 +34,12 @@ void Player::setIsJumping(bool i)
 bool Player::getIsJumping()
 {
 	return isJumping;
+}
+void Player::setIsDead(bool d)
+{
+	isDead = d;
+}
+bool Player::getIsDead()
+{
+	return isDead;
 }

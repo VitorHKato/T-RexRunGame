@@ -12,4 +12,5 @@ public:
 	void animation();
 	void setFastMode(bool s);
 
+	void resetPosition();
 };

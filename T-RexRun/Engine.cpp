@@ -41,6 +41,12 @@ Obstacle* Engine::getObstacleElements()
 }
 void Engine::movePlayer()
 {
+	if (player->getIsDead())
+	{
+		timer = 1;
+		speed = 0.2;
+	}
+
 	timer++;
 
 	if (timer % 1000 == 0)
@@ -50,14 +56,14 @@ void Engine::movePlayer()
 	}
 
 	if (player->getPosition().y <= 400)
-		player->setPosition(speed, gravity);
+		player->setPosition(player->getPosition().x + speed, player->getPosition().y + gravity);
 	else
-		player->setPosition(speed, 0);
+		player->setPosition(player->getPosition().x + speed, player->getPosition().y);
 
 	if (player->getJump() && player->getIsJumping())
 	{
 		player->setJump(false);
-		player->setPosition(0, -150);
+		player->setPosition(player->getPosition().x, player->getPosition().y - 150);
 	}
 
 	if (player->getPosition().y >= 400)
@@ -85,4 +91,22 @@ void Engine::initializeObstacleElements()
 {
 	cactus = new Cactus();
 	obstacleElements.push_back(cactus);
+}
+bool Engine::collision(Player* p, Obstacle* o)
+{
+	if (p->getHitBox().getGlobalBounds().intersects(o->getHitbox().getGlobalBounds()))
+	{
+		p->setIsDead(true);
+		return true;
+	}
+		return false;
+}
+void Engine::manageCollisions()
+{
+	for (i_obstacleElements = obstacleElements.begin();
+		i_obstacleElements != obstacleElements.end();
+		i_obstacleElements++)
+	{
+		collision(player, *i_obstacleElements);
+	}
 }

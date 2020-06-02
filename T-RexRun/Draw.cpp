@@ -35,28 +35,22 @@ void Draw::loop(Event* event)
 			engine->playerJump();
 		}
 
-		frame++;
-
+		playerSpeedMode();
 		engine->movePlayer();
+		engine->manageCollisions();
 		CameraControl();
 		ResetScenario();
 
-		if (frame >= 5000)
-			engine->getPlayer()->setFastMode(true);
-
-
-		window->setView(view);
-		window->clear(Color::White);
-		window->draw(engine->getBackgroundElement()->getSprite());
-		window->draw(engine->getPlayer()->getSprite());
-		window->draw(engine->getObstacleElements()->getSprite());
-		window->display();
+		draws();
 	}
 }
 void Draw::CameraControl()
 {
 	if (engine->getPlayer()->getPosition().x > WIDTH / 3)
 		view.setCenter(Vector2f(engine->getPlayer()->getPosition().x + WIDTH / 3 - 200, HEIGHT));
+
+	if(engine->getPlayer()->getIsDead())
+		view.setCenter(Vector2f(WIDTH / 2, HEIGHT));
 }
 void Draw::ResetScenario()
 {
@@ -72,4 +66,20 @@ void Draw::ResetScenario()
 	if(engine->getObstacleElements()->getPosition().x < engine->getPlayer()->getPosition().x - WIDTH / 2)
 		engine->getObstacleElements()->setPosition(engine->getPlayer()->getPosition().x + WIDTH / 2 + dist(gen), HEIGHT);
 
+}
+void Draw::playerSpeedMode()
+{
+	frame++;
+
+	if (frame >= 5000)
+		engine->getPlayer()->setFastMode(true);
+}
+void Draw::draws()
+{
+	window->setView(view);
+	window->clear(Color::White);
+	window->draw(engine->getBackgroundElement()->getSprite());
+	window->draw(engine->getPlayer()->getSprite());
+	window->draw(engine->getObstacleElements()->getSprite());
+	window->display();
 }

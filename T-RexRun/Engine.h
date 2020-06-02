@@ -35,4 +35,7 @@ public:
 	void playerJump();
 	void initializeBackgroundElements();
 	void initializeObstacleElements();
+
+	bool collision(Player* p, Obstacle* o);
+	void manageCollisions();
 };

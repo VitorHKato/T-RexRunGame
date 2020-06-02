@@ -7,6 +7,7 @@ protected:
 	RectangleShape hitbox;
 	bool jump;
 	bool isJumping;
+	bool isDead;
 public:
 	Player();
 	~Player();
@@ -17,4 +18,8 @@ public:
 	bool getJump();
 	void setIsJumping(bool i);
 	bool getIsJumping();
+	void setIsDead(bool d);
+	bool getIsDead();
+
+	virtual void resetPosition() = 0;
 };
