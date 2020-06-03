@@ -38,4 +38,7 @@ public:
 
 	bool collision(Player* p, Obstacle* o);
 	void manageCollisions();
+
+	void restartGame();
+	void resetPosition(Entity* e);
 };

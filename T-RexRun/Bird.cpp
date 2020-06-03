@@ -4,7 +4,9 @@ using namespace std;
 Bird::Bird()
 {
 	loadSprite("Images/Bird.jpg");
-	sprite.setPosition(1500, 250);
+	initialPositionX = 1500;
+	initialPositionY = 250;
+	setPosition(initialPositionX, initialPositionY);
 }
 Bird::~Bird()
 {

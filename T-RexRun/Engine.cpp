@@ -45,6 +45,8 @@ void Engine::movePlayer()
 	{
 		timer = 1;
 		speed = 0.2;
+		player->setIsDead(false);
+		restartGame();
 	}
 
 	timer++;
@@ -109,4 +111,26 @@ void Engine::manageCollisions()
 	{
 		collision(player, *i_obstacleElements);
 	}
+}
+void Engine::restartGame()
+{
+	resetPosition(player);
+
+	for (i_obstacleElements = obstacleElements.begin();
+		i_obstacleElements != obstacleElements.end();
+		i_obstacleElements++)
+	{
+		resetPosition(*i_obstacleElements);
+	}
+
+	for (i_backgroundElements = backgroundElements.begin();
+		i_backgroundElements != backgroundElements.end();
+		i_backgroundElements++)
+	{
+		resetPosition(*i_backgroundElements);
+	}
+}
+void Engine::resetPosition(Entity* e)
+{
+	e->setPosition(e->getInitialPositionX(), e->getInitialPositionY());
 }

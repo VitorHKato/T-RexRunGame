@@ -20,6 +20,4 @@ public:
 	bool getIsJumping();
 	void setIsDead(bool d);
 	bool getIsDead();
-
-	virtual void resetPosition() = 0;
 };

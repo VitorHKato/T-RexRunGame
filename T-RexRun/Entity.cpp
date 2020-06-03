@@ -27,3 +27,11 @@ void Entity::loadSprite(const string arq)
 	}
 	sprite.setTexture(texture);
 }
+float Entity::getInitialPositionX()
+{
+	return initialPositionX;
+}
+float Entity::getInitialPositionY()
+{
+	return initialPositionY;
+}
