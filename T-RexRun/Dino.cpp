@@ -27,6 +27,9 @@ void Dino::animation()
 {
 	frameAnimation++;
 
+	if (isDead)
+		fastMode = false;
+
 	if (frameAnimation == 300)
 	{
 		frameImage++;

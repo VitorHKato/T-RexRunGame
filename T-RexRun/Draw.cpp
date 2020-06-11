@@ -71,8 +71,10 @@ void Draw::playerSpeedMode()
 {
 	frame++;
 
-	if (frame >= 5000)
+	if (frame >= 5000 && engine->getPlayer()->getPosition().x > 5000)
 		engine->getPlayer()->setFastMode(true);
+	else
+		engine->getPlayer()->setFastMode(false);
 }
 void Draw::draws()
 {
